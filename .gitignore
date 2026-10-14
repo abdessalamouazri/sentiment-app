@@ -11,6 +11,7 @@ __pycache__/
 # Modèles entraînés, lourds et reproductibles
 models/*
 !models/.gitkeep
+!models/metrics.json
 
 # Jeux de données
 data/*
