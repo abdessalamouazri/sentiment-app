@@ -43,3 +43,8 @@ htmlcov/
 
 # TP5
 !data/avis_exemple.csv
+
+# TP6
+dist/
+build/
+*.egg-info/
