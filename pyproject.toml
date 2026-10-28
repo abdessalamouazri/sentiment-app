@@ -22,3 +22,6 @@ ignore_missing_imports = true
 [tool.coverage.report]
 show_missing = true
 skip_empty = true
+# Seule exclusion : le lancement direct (uvicorn.run), jamais exécuté sous pytest ;
+# il est couvert à la main à chaque TP par « uvicorn api.main:app ».
+exclude_also = ['if __name__ == "__main__":']

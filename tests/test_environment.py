@@ -43,7 +43,7 @@ def test_required_file_exists(root, filename):
 
 def test_requirements_pins_versions(root):
     lines = (root / "requirements.txt").read_text(encoding="utf-8").splitlines()
-    useful = [l.strip() for l in lines if l.strip() and not l.strip().startswith("#")]
+    useful = [ligne.strip() for ligne in lines if ligne.strip() and not ligne.strip().startswith("#")]
     assert useful, "requirements.txt est vide"
     for line in useful:
         assert "==" in line, f"version non figée dans requirements.txt : {line}"

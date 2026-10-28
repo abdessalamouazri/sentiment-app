@@ -1,1 +1,21 @@
 text,attendu,difficulte,erreur_connue
+"Commande reçue en deux jours, emballage impeccable, je suis ravi",POSITIVE,,
+"Produit défectueux dès la sortie de la boîte, je demande un remboursement",NEGATIVE,,
+"Très bonne surprise, la qualité dépasse largement le prix payé",POSITIVE,,
+"Le colis est arrivé écrasé et le vendeur ne répond plus",NEGATIVE,,"vocabulaire hors du jeu de démonstration : « écrasé » et « ne répond plus » inconnus du TF-IDF, le modèle répond POSITIVE à 0.64"
+"Appareil silencieux et efficace, toute la famille l'utilise",POSITIVE,,
+"Une étoile seulement parce que zéro n'existe pas, tout est à jeter",NEGATIVE,,
+"Montage simple, notice claire, résultat solide : parfait",POSITIVE,,
+"Troisième panne en un mois, le service après-vente est aux abonnés absents",NEGATIVE,,"« aux abonnés absents » absent du vocabulaire : le modèle répond POSITIVE à 0.64"
+"Je rachèterai les yeux fermés, rien à redire sur ce vendeur",POSITIVE,négation,
+"Pas déçu du tout, cet achat valait vraiment le coup",POSITIVE,négation,
+"Ce n'est pas du tout à la hauteur du prix demandé",NEGATIVE,négation,
+"Génial, encore un colis perdu, merci le transporteur",NEGATIVE,ironie,
+"Superbe qualité... si on aime les coutures qui lâchent en une semaine",NEGATIVE,ironie,"ironie : le sac de mots compte « superbe qualité » sans voir le retournement, POSITIVE à 0.63"
+"Le design est magnifique mais la batterie rend l'âme en deux heures",NEGATIVE,mitigé,
+"Quelques rayures à la livraison, mais le produit fonctionne très bien",POSITIVE,mitigé,
+"L'écran est superbe, dommage que le son soit aussi médiocre",NEGATIVE,mitigé,
+"Le stage était enrichissant et l'équipe très accueillante",POSITIVE,autre domaine,
+"Attente interminable aux urgences, personnel débordé et désagréable",NEGATIVE,autre domaine,
+"Chambre propre et calme, petit déjeuner copieux, personnel charmant",POSITIVE,autre domaine,
+"Repas froid et fade, service lent, nous ne reviendrons pas",NEGATIVE,autre domaine,
