@@ -40,3 +40,6 @@ mlruns/
 .coverage
 htmlcov/
 !data/jeu_or.csv
+
+# TP5
+!data/avis_exemple.csv
