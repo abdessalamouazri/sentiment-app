@@ -34,3 +34,9 @@ mlruns/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+
+# TP4
+.hypothesis/
+.coverage
+htmlcov/
+!data/jeu_or.csv
