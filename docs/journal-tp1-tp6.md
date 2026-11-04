@@ -439,16 +439,18 @@ git push
 **Obtenu** :
 
 ```text
-pytest : les 42 tests du TP2 verts (inclus dans les 48 passed du T14, puis la suite complète)
-Entraînement --allocine : non consigné ; models/metrics.json courant : source « demo »
-(le TP3 remet volontairement le modèle de démonstration, celui que la CI entraîne)
+Rejoué le 04/11 :
+Source : allocine, 20000 avis (10204 négatifs) ; 16000 avis d'entraînement, 4000 de test
+Vocabulaire : 149529 termes
+F1 macro sur le jeu de test : 0.920 (seuil 0.85)
+pytest : les 42 tests du TP2 verts (inclus dans la suite complète, 130 passed)
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi le F1 est-il meilleur sur Allociné ?) :
 
-> Si --allocine a été lancé le 14/10, son F1 (attendu : 0.920) n'a pas été conservé. À rejouer au besoin : python src/train.py --allocine, noter le F1 ici, puis python src/train.py pour revenir au modèle du cours.
+> F1 0,920 sur 4 000 avis de test réels contre 0,879 sur la démonstration : plus de données (16 000 avis d'entraînement) et un vocabulaire de 149 529 termes au lieu de 316, donc beaucoup moins de mots inconnus. Le modèle de démonstration a ensuite été remis en place (python src/train.py) : c'est lui que la CI entraîne et que la fiche modèle décrit.
 
 ![C5 : Allociné et tests](captures/tp2-c5-allocine.png)
 

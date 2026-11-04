@@ -10,7 +10,7 @@
 > Nom, version du paquet (celle de sentiment_app.__version__), date d'entraînement, type de modèle.
 
 Classifieur de sentiment `tfidf-logreg`, livré par le paquet `sentiment-app` version 0.6.0,
-entraîné le 2026-10-28 (date de `models/metrics.json`). Pipeline scikit-learn : TF-IDF
+entraîné le 2026-11-04 (date de `models/metrics.json`). Pipeline scikit-learn : TF-IDF
 (unigrammes et bigrammes, 316 termes) suivi d'une régression logistique binaire ; le fichier
 `models/sentiment.joblib` n'est pas distribué avec le paquet.
 
