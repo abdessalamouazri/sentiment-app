@@ -34,6 +34,18 @@
   sans envoyer plus d'un tiers de la file au service client ; au-delà, chaque point
   d'exactitude coûte trop d'avis déroutés.
 
+## 3 bis. Biais par groupe (étape F)
+
+`python src/biais.py` sur les 58 avis de test : le groupe le moins bien servi est celui
+des avis avec retournement — 17 avis, exactitude 0,588, et les 7 erreurs du modèle y
+sont toutes, contre 1,000 d'exactitude pour les 41 avis directs. La longueur n'est pas
+la cause : les 10 avis longs sans retournement sont tous justes, c'est bien le
+retournement qui fait chuter le groupe « long », pas le nombre de mots. Question
+ouverte : l'abstention ne corrige pas ce biais, elle le déplace — 15 des 17 avis à
+retournement partent « vers un humain », donc les agents reçoivent une file « à
+vérifier » composée presque uniquement des avis les plus difficiles ; reste à savoir si
+c'est un coût acceptable ou un simple transfert du problème.
+
 ## 4. Jeu d'or
 
 - Bilan (`python src/bilan_jeu_or.py`, 20 avis) : justes 6, abstentions 11,

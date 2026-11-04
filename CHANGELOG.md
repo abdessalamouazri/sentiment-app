@@ -2,6 +2,12 @@
 
 Le numéro de version suit les TP : 0.N.0 à la fin du TP N. Chaque version publiée porte une étiquette Git `v0.N.0`.
 
+## Non publié
+
+- Compléments du lot 1 : explicabilité SHAP (`src/expliquer.py`), mesure des biais par
+  groupe (`src/biais.py`), deux graphiques dans l'onglet fichier de l'interface, et la
+  fiche modèle (`docs/fiche-modele.md`), vérifiée par 14 tests.
+
 ## 0.6.0 (TP6) : le paquet
 
 - Pour celui qui installe : `pip install sentiment_app-0.6.0-py3-none-any.whl` suffit,

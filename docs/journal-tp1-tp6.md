@@ -426,6 +426,30 @@ git push
 
 ![C5 : Allociné et tests](captures/tp2-c5-allocine.png)
 
+### C6 · Ce que regarde le modèle (étape F, complément)
+
+```powershell
+python C:\IA-DEV\complements-lot1\appliquer_complements.py C:\IA-DEV\sentiment-app --etape tp2
+python src/expliquer.py
+python -m pytest tests/test_explicabilite.py -q
+```
+
+**Attendu** : « je » (+0.771) et « en » (+0.683) parmi les termes qui poussent vers positive, « cassé » (-0.923) et « au » (-0.689) vers negative ; l'avis mitigé classé `negative (confiance 0.5335)`, 20 termes vers negative (-1.0061) contre 13 vers positive (+0.9177), `Base + contributions = -0.1343 ; sortie du modèle = -0.1343`, puis `4 passed`.
+
+**Obtenu** :
+
+```text
+À compléter
+```
+
+- [ ] Conforme
+
+**Commentaire** (que révèlent les termes les plus influents ?) :
+
+> À compléter.
+
+![C6 : explication du modèle](captures/tp2-c6-expliquer.png)
+
 ### Membre B, après le TP2
 
 ```powershell
@@ -827,6 +851,30 @@ pre-commit install
 
 ![T27 : la CI du TP4](captures/tp4-t27-actions.png)
 
+### T27a · Le modèle sert-il tous les avis de la même façon ? (étape F, complément)
+
+```powershell
+python C:\IA-DEV\complements-lot1\appliquer_complements.py C:\IA-DEV\sentiment-app --etape tp4
+python src/biais.py
+python -m pytest tests/test_biais.py -q
+```
+
+**Attendu** : avis avec retournement : 17 avis, exactitude 0.588, 7 erreurs, 15 vers un humain ; avis directs : 41 avis, 1.000. Avis longs : 0.741, mais les 10 avis longs sans retournement sont tous justes. Puis `8 passed`.
+
+**Obtenu** :
+
+```text
+À compléter
+```
+
+- [ ] Conforme
+
+**Commentaire** (pourquoi la longueur n'est-elle pas la cause ?) :
+
+> À compléter.
+
+![T27a : performances par groupe](captures/tp4-t27a-biais.png)
+
 ### Membre B, après le TP4
 
 ```powershell
@@ -1013,6 +1061,30 @@ git push
 > À compléter.
 
 ![T34 : la CI du TP5](captures/tp5-t34-actions.png)
+
+### T34a · Deux graphiques dans l'onglet fichier (étape G, complément)
+
+```powershell
+python C:\IA-DEV\complements-lot1\appliquer_complements.py C:\IA-DEV\sentiment-app --etape tp5
+python -m pytest tests/test_graphiques.py tests/test_interface.py -q
+streamlit run ui/app.py
+```
+
+**Attendu** : `9 passed` ; avec `data/avis_exemple.csv`, la répartition affiche positif 3, négatif 2, à vérifier 1, refus 0, et les confiances 1, 1, 3, 1, 0 avis de 50 à 100 %, par tranches de 10 points.
+
+**Obtenu** :
+
+```text
+À compléter
+```
+
+- [ ] Conforme
+
+**Commentaire** (que montre le graphique des confiances que le tableau ne montre pas ?) :
+
+> À compléter.
+
+![T34a : les deux graphiques](captures/tp5-t34a-graphiques.png)
 
 ### Membre B, après le TP5
 
@@ -1214,6 +1286,31 @@ git push origin v0.6.0
 > À compléter.
 
 ![T41](captures/tp6-t41-actions.png)
+
+### T41a · La fiche modèle (étape G, complément)
+
+```powershell
+python C:\IA-DEV\complements-lot1\appliquer_complements.py C:\IA-DEV\sentiment-app --etape tp6
+python -m pytest tests/test_fiche_modele.py -q
+notepad docs\fiche-modele.md
+python -m pytest tests/test_fiche_modele.py -q
+```
+
+**Attendu** : au départ `13 failed, 1 passed`, voulus ; une fois la fiche remplie, `14 passed` : version 0.6.0, F1 0.879 et rappel des négatifs 0.931 cités, un humain prévu dans les conditions d'usage.
+
+**Obtenu** :
+
+```text
+À compléter
+```
+
+- [ ] Conforme
+
+**Commentaire** (quelle rubrique a été la plus difficile à remplir, et pourquoi ?) :
+
+> À compléter.
+
+![T41a : fiche modèle](captures/tp6-t41a-fiche-modele.png)
 
 ### Membre B, après le TP6
 

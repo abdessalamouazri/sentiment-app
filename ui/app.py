@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # pour importer ui
 import pandas as pd
 import streamlit as st
 
-from ui import client
+from ui import client, graphiques
 
 st.set_page_config(page_title="Analyse de sentiment")
 st.title("Analyse de sentiment des avis")
@@ -49,5 +49,10 @@ with onglet_lot:
             avis["confiance"] = [r.score for r in reponses]
             st.dataframe(avis, use_container_width=True)
             st.write(client.resumer(reponses))
+            colonne_verdicts, colonne_confiances = st.columns(2)
+            colonne_verdicts.caption("Répartition des verdicts")
+            colonne_verdicts.bar_chart(graphiques.repartition(reponses))
+            colonne_confiances.caption("Confiance du modèle, par tranche")
+            colonne_confiances.bar_chart(graphiques.histogramme_confiances(reponses))
             st.download_button("Télécharger les résultats", avis.to_csv(index=False),
                                file_name="resultats.csv", mime="text/csv")
