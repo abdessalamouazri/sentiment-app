@@ -4,10 +4,10 @@
 
 | | Membre A | Membre B |
 | --- | --- | --- |
-| Nom | *à compléter* | *à compléter* |
-| Compte GitHub | *à compléter* | *à compléter* |
+| Nom | Wizli Abdellah | Berrami Mouad |
+| Compte GitHub | @wizli595 | *à compléter* |
 
-**Dépôt** : *adresse du dépôt GitHub, à compléter*
+**Dépôt** : https://github.com/wizli595/sentiment-app (privé)
 
 ## Comment remplir ce journal
 
@@ -54,14 +54,17 @@ git config --global user.name
 **Obtenu** :
 
 ```text
-À compléter
+py -0 : -V:3.14 * ; -V:3.13 ; -V:3.12   (pas de 3.11)
+py -3.11 --version : introuvable ; retenu : Python 3.12.10
+git version 2.51.0.windows.1
+user.name : wizli595
 ```
 
 - [ ] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> Python 3.11 n'est pas installé sur ce poste ; 3.12.10 est la version la plus proche compatible avec les épinglages du cours (pandas 2.2.*, scikit-learn 1.5.*). Le diagnostic et les tests l'acceptent avec un avertissement, toléré jusqu'au bout.
 
 ![Poste du membre A](captures/tp0-poste-membre-a.png)
 
@@ -105,14 +108,15 @@ Get-ChildItem -Force
 **Obtenu** :
 
 ```text
-À compléter
+app, data, docs, models, scripts, tests, ui
+.github, .vscode, .gitignore, .env.example, requirements.txt, pytest.ini, README.md
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> Les sept dossiers et les fichiers de configuration sont en place. Particularité : le dépôt du cours étant vide au moment du TP, le kit a été reconstruit d'après l'énoncé complet (structure, 38 tests, scripts), et T0 vérifié sur cette structure (07/10).
 
 ![T0 : structure du kit](captures/tp1-t0-structure.png)
 
@@ -133,14 +137,16 @@ python -m pytest -q
 **Obtenu** (version de Python, résumé du diagnostic, dernière ligne de pytest) :
 
 ```text
-À compléter
+Python 3.12.10, (.venv) actif
+check_setup : 0 erreur(s) ; avertissements : Python 3.12 au lieu de 3.11, un seul auteur
+pytest : 37 passed, 1 failed (test_two_distinct_authors)
 ```
 
 - [ ] Conforme
 
 **Commentaire** (que réclament les trois échecs, et pourquoi quatre tests sont ignorés ?) :
 
-> À compléter.
+> L'état « 3 failed, 31 passed, 4 skipped » n'a pas été observé tel quel : les fiches étaient déjà remplies et le dépôt déjà initialisé au premier pytest complet. Le seul rouge restant réclamait le commit du membre B, arrivé au TP2.
 
 ![T1 : pytest au départ](captures/tp1-t1-pytest.png)
 
@@ -156,14 +162,14 @@ python -m pytest -q
 **Obtenu** :
 
 ```text
-À compléter
+python -m pytest tests/test_cadrage.py -q : 12 passed
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (l'approche retenue pour chacun des trois cas, et les deux critères qui la justifient) :
 
-> À compléter.
+> Les trois fiches (pharmacie → règles métier, règlement → RAG, avis négatifs → machine learning) citent au moins deux critères par leur lettre, avec une seule case cochée par fiche.
 
 ![T2 : fiches complètes](captures/tp1-t2-cadrage.png)
 
@@ -185,14 +191,16 @@ python -m pytest -q
 **Obtenu** (extrait de `git status`, dernière ligne de pytest) :
 
 ```text
-À compléter
+git status : 43 fichiers en attente ; aucune ligne .venv/, .env ni .joblib
+git push : main -> main (https://github.com/wizli595/sentiment-app)
+Premier passage CI (07/10) : rouge — un seul auteur, attendu
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (quel test échoue encore, et pourquoi ?) :
 
-> À compléter.
+> Le .gitignore a fait son travail : rien de lourd ni de secret dans le premier commit. Le rouge de la CI désignait le travail restant : le commit du membre B.
 
 ![T3 : le dépôt sur GitHub](captures/tp1-t3-depot-github.png)
 
@@ -239,14 +247,17 @@ python -m pytest tests/test_git_history.py -q
 **Obtenu** :
 
 ```text
-À compléter
+git shortlog -sn --all :
+    11  wizli595
+     1  Mouad Berrami
+python -m pytest tests/test_git_history.py -q : 3 passed
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> Deux identités distinctes. Le commit du membre B est « Semaine 2 : analyse des erreurs » (1c87374, 14/10) : arrivé au TP2 plutôt qu'à la fin du TP1, mais l'historique compte bien un commit par membre, et la CI est passée au vert le 14/10.
 
 ![T5 : deux auteurs](captures/tp1-t5-shortlog.png)
 
@@ -263,14 +274,16 @@ python -m pytest -q
 **Obtenu** :
 
 ```text
-À compléter
+check_setup : 0 erreur(s) (avertissement toléré : Python 3.12)
+pytest : les 38 tests du TP1 verts — vérifiés dans la suite complète (48 passed au T14,
+130 passed + 3 xfailed au 04/11) ; CI verte depuis le 14/10
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> La vérification finale a été absorbée par les TP suivants : chaque kit rejoue les 38 tests du TP1 à chaque pytest et à chaque push.
 
 ![T6 : pytest final](captures/tp1-t6-pytest.png)
 
@@ -294,14 +307,16 @@ python -m pytest -q
 **Obtenu** :
 
 ```text
-À compléter
+Clone frais non rejoué tel quel à la fin du TP1.
+Équivalents vérifiés depuis : CI verte sur machine neuve (run du 04/11),
+et roue installée dans un environnement vierge hors du dépôt (T40, 28/10).
 ```
 
 - [ ] Conforme
 
 **Commentaire** (qu'est-ce que ce contrôle prouve que T6 ne prouvait pas ?) :
 
-> À compléter.
+> À rejouer si demandé : cd $env:TEMP ; git clone … verif ; venv ; pip install -r requirements.txt ; python scripts/check_setup.py ; python -m pytest -q.
 
 ![T7 : clone frais](captures/tp1-t7-clone-frais.png)
 
@@ -322,14 +337,16 @@ python -m pytest -q
 **Obtenu** :
 
 ```text
-À compléter
+Fait le 14/10 ; sortie non consignée sur le moment.
+État final : src/ (make_demo, train, evaluate, predict), tests/test_model.py et les
+documents du TP en place ; les contrôles C2 à C4 ont été rejoués le 04/11 (valeurs ci-dessous).
 ```
 
 - [ ] Conforme
 
 **Commentaire** (que réclament les deux échecs ?) :
 
-> À compléter.
+> Le journal a été adopté après coup (04/11) : les sorties intermédiaires du 14/10 n'avaient pas été conservées, les contrôles rejouables ont donc été rejoués.
 
 ![C1 : point de départ du TP2](captures/tp2-c1-pytest.png)
 
@@ -344,14 +361,16 @@ python src/make_demo.py
 **Obtenu** :
 
 ```text
-À compléter
+290 avis écrits dans data\demo_reviews.csv
+  145 positifs, 145 négatifs
+  dont 100 avis mitigés et 30 neutres, volontairement difficiles
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (recopiez un avis mitigé et expliquez sa structure) :
 
-> À compléter.
+> Jeu équilibré et volontairement difficile : les 100 avis mitigés sont la source des erreurs analysées en C4. Rejoué le 04/11, identique (génération déterministe).
 
 ![C2 : jeu de démonstration](captures/tp2-c2-make-demo.png)
 
@@ -367,14 +386,17 @@ git status --short
 **Obtenu** :
 
 ```text
-À compléter
+Source : demo, 290 avis (145 négatifs) ; 232 avis d'entraînement, 58 de test
+Vocabulaire : 316 termes
+F1 macro sur le jeu de test : 0.879 (seuil 0.85)
+git status : models/metrics.json seul ; ni sentiment.joblib, ni demo_reviews.csv
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi la mesure est-elle versionnée, et pas le modèle ?) :
 
-> À compléter.
+> Le F1 dépasse le seuil de 0,85. Seule la mesure (metrics.json) entre dans Git : le modèle se reconstruit en une commande, c'est la deuxième règle d'architecture du dépôt.
 
 ![C3 : entraînement](captures/tp2-c3-train.png)
 
@@ -389,14 +411,16 @@ python src/evaluate.py
 **Obtenu** (la matrice et les trois erreurs affichées) :
 
 ```text
-À compléter
+Évaluation sur 58 avis (demo) — exactitude 0.879
+  rappel negative 0.931 (27/29), rappel positive 0.828 (24/29)
+Matrice (lignes = vérité) : negative 27 2 ; positive 5 24 → 7 erreurs sur 58
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi le modèle se trompe-t-il sur ces avis ?) :
 
-> À compléter.
+> Les 7 erreurs sont toutes des avis mitigés : le sac de mots additionne les termes sans voir le retournement (« sauf que ensuite… »). Analyse en trois phrases dans docs/semaine2.md.
 
 ![C4 : matrice de confusion](captures/tp2-c4-evaluate.png)
 
@@ -415,14 +439,16 @@ git push
 **Obtenu** :
 
 ```text
-À compléter
+pytest : les 42 tests du TP2 verts (inclus dans les 48 passed du T14, puis la suite complète)
+Entraînement --allocine : non consigné ; models/metrics.json courant : source « demo »
+(le TP3 remet volontairement le modèle de démonstration, celui que la CI entraîne)
 ```
 
 - [ ] Conforme
 
 **Commentaire** (pourquoi le F1 est-il meilleur sur Allociné ?) :
 
-> À compléter.
+> Si --allocine a été lancé le 14/10, son F1 (attendu : 0.920) n'a pas été conservé. À rejouer au besoin : python src/train.py --allocine, noter le F1 ici, puis python src/train.py pour revenir au modèle du cours.
 
 ![C5 : Allociné et tests](captures/tp2-c5-allocine.png)
 
@@ -439,14 +465,18 @@ python -m pytest tests/test_explicabilite.py -q
 **Obtenu** :
 
 ```text
-À compléter
+Vers positive : je (+0.771), que je (+0.764), en (+0.683), et livraison (+0.677)…
+Vers negative : arrivée, cassé arrivée, cassé, produit cassé (-0.923), au (-0.689)…
+Avis mitigé : negative (confiance 0.5335) ; 20 termes vers negative (-1.0061),
+13 vers positive (+0.9177) ; Base + contributions = -0.1343 ; sortie du modèle = -0.1343
+pytest tests/test_explicabilite.py : 4 passed
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (que révèlent les termes les plus influents ?) :
 
-> À compléter.
+> Des mots-outils (« je », « en », « au ») pèsent autant que des mots de sentiment : le modèle a appris les tournures du jeu de démonstration, pas le sentiment seul. Sur l'avis mitigé, les deux moitiés se compensent presque : cette hésitation mesurable est ce que le seuil d'abstention du TP4 exploite.
 
 ![C6 : explication du modèle](captures/tp2-c6-expliquer.png)
 
@@ -492,14 +522,14 @@ python -m pytest -q
 **Obtenu** :
 
 ```text
-À compléter
+python -m pytest -q : 48 passed (les 42 du TP2 + 6 tests de l'API)
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi réentraîner sur le jeu de démonstration avant les tests ?) :
 
-> À compléter.
+> Kit appliqué en simulation puis pour de bon : api/, tests/test_api.py, pythonpath = . dans pytest.ini, et la CI entraîne désormais le modèle avant les tests.
 
 ![T14 : 48 tests verts](captures/tp3-t14-pytest.png)
 
@@ -516,14 +546,14 @@ Puis, dans `http://localhost:8000/docs` : `GET /health`, « Try it out », « Ex
 **Obtenu** :
 
 ```text
-À compléter
+{'status': 'OK', 'model': 'tfidf-logreg (TP2, models/sentiment.joblib)'}
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> L'API dit quel modèle elle sert : le terminal affiche « Modèle chargé avec succès » au démarrage, et /health le confirme à chaque appel.
 
 ![T15 : health dans /docs](captures/tp3-t15-health.png)
 
@@ -536,14 +566,14 @@ Puis, dans `http://localhost:8000/docs` : `GET /health`, « Try it out », « Ex
 **Obtenu** :
 
 ```text
-À compléter
+200 — {"label": "POSITIVE", "score": 0.777, "text": "Livraison rapide, produit conforme, très satisfait"}
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> Avis évident, verdict net : 0,777 de confiance, au-dessus du futur seuil d'abstention.
 
 ![T16 : avis positif](captures/tp3-t16-positif.png)
 
@@ -562,14 +592,14 @@ python -c "import httpx; r = httpx.post('http://127.0.0.1:8000/predict', json={'
 **Obtenu** :
 
 ```text
-À compléter
+200 — NEGATIVE, 0.75 (« Produit cassé et service injoignable, à fuir »)
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> Symétrique du T16 : le vocabulaire négatif (« cassé », « à fuir ») est bien dans les 316 termes appris.
 
 ![T17 : avis négatif](captures/tp3-t17-negatif.png)
 
@@ -582,14 +612,15 @@ python -c "import httpx; r = httpx.post('http://127.0.0.1:8000/predict', json={'
 **Obtenu** (le code et le `detail` de chaque réponse) :
 
 ```text
-À compléter
+{"text": ""} → 422 ; {} → 422 ; {"text": 42} → 422
+(rejoué par tests/test_api.py : test_predict_texte_vide_422, test_predict_champ_manquant_422)
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (que dit `detail`, et pourquoi 422 plutôt que 500 ?) :
 
-> À compléter.
+> Trois refus, trois 422 : le contrat Pydantic filtre avant que le modèle ne soit appelé. Le cas « espaces seuls » renvoyait un detail en chaîne : c'est le défaut que le TP4 corrige dans le schéma.
 
 ![T18 : un refus 422](captures/tp3-t18-refus.png)
 
@@ -606,14 +637,15 @@ git push
 **Obtenu** :
 
 ```text
-À compléter
+Run « Semaine 3 : API FastAPI » du 28/10 : success.
+Étape « Modèle de démonstration, pour les tests de l'API (TP3) » passée, puis 48 passed.
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi la CI doit-elle entraîner le modèle ?) :
 
-> À compléter.
+> La CI entraîne le modèle sur sa machine neuve avant de tester : elle n'a jamais le joblib, et n'en a pas besoin.
 
 ![T19 : la CI du TP3](captures/tp3-t19-actions.png)
 
@@ -630,14 +662,16 @@ Rename-Item models/sentiment.bak sentiment.joblib
 **Obtenu** :
 
 ```text
-À compléter
+Vérifié par tests/test_integration.py::test_sans_modele_l_api_refuse_de_demarrer :
+FileNotFoundError au démarrage, l'API ne démarre pas.
+Rejoué via la roue (T40) : « modèle introuvable : … », code de sortie 1.
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> Refuser de démarrer vaut mieux que répondre 503 à chaque requête : l'échec est immédiat, visible dans le journal du déploiement, au lieu d'un service debout qui ne sert rien.
 
 ![T20 : refus de démarrer](captures/tp3-t20-sans-modele.png)
 
@@ -685,14 +719,17 @@ mypy api
 **Obtenu** (dernière ligne de pytest, ligne `TOTAL`, nombre de remarques de ruff, sortie de mypy) :
 
 ```text
-À compléter
+python -m pytest -q : 1 failed, 51 passed, 1 skipped (jeu d'or vide : « 0 avis sur 20 »)
+Couverture : TOTAL 91 %, lignes manquantes api/main.py 49, 77-79, 85-87
+ruff check . : 9 remarques (B904 ×2, I001 ×2, F401 ×2, B905 ×2, E741)
+mypy api : Success: no issues found in 4 source files
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (à quels comportements de l'API correspondent les lignes non couvertes ?) :
 
-> À compléter.
+> Le point de départ est mesuré avant toute correction et commité tel quel (« TP4 : point de depart mesure ») : les lignes jamais exécutées sont précisément les cas de panne (503, 500) qu'aucun test n'exerçait.
 
 ![T21 : couverture de départ](captures/tp4-t21-couverture.png)
 
@@ -709,7 +746,9 @@ python -m pytest -q tests/test_limites.py
 **Obtenu avant correction** (dernière ligne et contre-exemple) :
 
 ```text
-À compléter
+Avant correction : 2 failed, 8 passed — le cas « espaces seuls » reçoit bien 422,
+mais detail est la chaîne 'texte vide', pas la liste standard de FastAPI.
+Après field_validator dans api/schemas.py : 10 passed.
 ```
 
 Après la correction, dans `/docs` : `POST /predict` avec `{"text": "   "}`.
@@ -722,11 +761,11 @@ Après la correction, dans `/docs` : `POST /predict` avec `{"text": "   "}`.
 À compléter
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi deux formes de 422 posaient problème, et quel caractère hypothesis a trouvé) :
 
-> À compléter.
+> Corrigé dans le schéma, pas dans le modèle : un texte vide une fois ses blancs retirés est refusé par Pydantic, même règle que predict() du TP2, et le 422 reprend la forme standard (loc, msg, type).
 
 ![T22 : refus des espaces](captures/tp4-t22-espaces.png)
 
@@ -743,14 +782,14 @@ python -m pytest -q tests/test_limites.py
 **Obtenu** :
 
 ```text
-À compléter
+python -m pytest -q tests/test_limites.py, trois fois : 10 passed, 10 passed, 10 passed
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> Les deux propriétés hypothesis tiennent : tout texte non blanc de 1 à 2000 caractères reçoit 200 avec une étiquette du contrat et un score entre 0 et 1 ; tout texte de blancs (y compris '\x85', '\xa0') reçoit 422.
 
 ![T23 : propriétés vertes](captures/tp4-t23-proprietes.png)
 
@@ -765,14 +804,17 @@ python src/courbe_seuil.py
 **Obtenu** (deux ou trois lignes de la courbe, puis la réponse au texte inventé) :
 
 ```text
-À compléter
+Courbe du seuil (58 avis) : 0.50 → répond à 58 (100 %), exactitude 0.879, 7 erreurs ;
+0.60 → répond à 42 (72 %), exactitude 0.952, 2 erreurs, 16 vers un humain ;
+0.70 → exactitude 1.000 mais 21 avis déroutés.
+« xqzvb wlkptr grombu » → INDETERMINE, 0.5162.
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (le seuil retenu, combien d'avis partent vers un humain, combien d'erreurs sont évitées) :
 
-> À compléter.
+> Seuil retenu : 0,60 (SEUIL_ABSTENTION dans api/model.py) — premier seuil qui divise les erreurs par trois sans dérouter plus d'un tiers de la file. Sans mot connu, il ne reste que l'ordonnée à l'origine : s'abstenir est la seule réponse honnête.
 
 ![T24 : courbe du seuil](captures/tp4-t24-courbe.png)
 
@@ -790,14 +832,15 @@ python -m pytest -q tests/test_jeu_or.py
 **Obtenu** (la ligne de bilan, puis la dernière ligne de pytest) :
 
 ```text
-À compléter
+python src/bilan_jeu_or.py : 6 justes, 11 abstentions, 3 erreurs franches déclarées
+python -m pytest -q tests/test_jeu_or.py : 18 passed, 3 xfailed
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (ce que les abstentions et les erreurs déclarées disent du modèle) :
 
-> À compléter.
+> 20 avis rédigés à la main, dont négation, ironie, mitigés et autre domaine. Les 3 erreurs franches (ironie, vocabulaire inconnu) restent déclarées en xfail(strict=True) : un meilleur modèle les corrigera et le test le signalera.
 
 ![T25 : bilan du jeu d'or](captures/tp4-t25-jeu-or.png)
 
@@ -813,14 +856,16 @@ python -m pytest -q --cov=api --cov-report=term-missing --cov-fail-under=95
 **Obtenu** (le test qui échouait avant la correction, puis la couverture finale) :
 
 ```text
-À compléter
+python -m pytest -q tests/test_integration.py : 6 passed
+Couverture : 97,70 % sans exclusion ; 100 % avec le bloc __main__ exclu et justifié
+(Required test coverage of 95% reached)
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi une panne du modèle doit-elle répondre 500, et pas 422 ?) :
 
-> À compléter.
+> Défaut trouvé : la conversion ValueError → 422 renvoyait le message interne du modèle au client. Supprimée : le schéma garantit l'entrée, toute panne (RuntimeError comme ValueError) répond 500 sans divulguer le message, vérifié par test_toute_panne_du_modele_donne_500_sans_le_message.
 
 ![T26 : couverture finale](captures/tp4-t26-couverture.png)
 
@@ -838,14 +883,18 @@ pre-commit install
 **Obtenu** (le message de mypy avant correction, puis les trois sorties finales) :
 
 ```text
-À compléter
+ruff check . : All checks passed!
+mypy api : Success: no issues found in 4 source files
+python -m pytest -q : 82 passed, 3 xfailed
+pre-commit : installé ; vérifié au commit (ruff Passed, mypy Passed)
+CI « Semaine 4 » du 28/10 : success
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (parmi les défauts trouvés au TP4, combien ruff et mypy avaient-ils signalés au départ ?) :
 
-> À compléter.
+> Contrat typé : Verdict(TypedDict) avec Literal[POSITIVE, NEGATIVE, INDETERMINE], correspondance explicite des étiquettes vérifiée au démarrage à la place du .upper(). Leçon du hook : activer le venv avant chaque commit, sinon « Executable mypy not found ».
 
 ![T27 : commit refusé par pre-commit](captures/tp4-t27-pre-commit.png)
 
@@ -864,14 +913,17 @@ python -m pytest tests/test_biais.py -q
 **Obtenu** :
 
 ```text
-À compléter
+Avec retournement : 17 avis, exactitude 0.588, 7 erreurs, 15 vers humain, 2 restantes
+Direct : 41 avis, exactitude 1.000 ; court : 31 avis, 1.000 ; long : 27 avis, 0.741
+Long direct : 10 avis, 1.000 — long avec retournement : 17 avis, 0.588
+python -m pytest tests/test_biais.py -q : 8 passed
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi la longueur n'est-elle pas la cause ?) :
 
-> À compléter.
+> Le groupe mal servi est celui des avis à retournement, pas des avis longs : les 10 avis longs sans retournement sont tous justes. L'abstention déplace le problème plus qu'elle ne le règle : 15 des 17 avis difficiles partent vers un humain. Effectifs faibles (17 avis) : à confirmer sur un vrai jeu.
 
 ![T27a : performances par groupe](captures/tp4-t27a-biais.png)
 
@@ -915,14 +967,14 @@ python -m pytest -q
 **Obtenu** :
 
 ```text
-À compléter
+python -m pytest -q : 94 passed, 3 xfailed (12 tests de plus qu'au TP4, aucun failed)
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (que vérifient les tests du client, et ceux de la page ?) :
 
-> À compléter.
+> Kit appliqué : ui/client.py (le seul à parler à l'API), ui/app.py (la page, qui ne décide rien), tests du client et de la page (AppTest), data/avis_exemple.csv.
 
 ![T28 : tests du TP5](captures/tp5-t28-pytest.png)
 
@@ -943,14 +995,15 @@ streamlit run ui/app.py
 **Obtenu** :
 
 ```text
-À compléter
+GET /health : {'status': 'OK', 'model': 'tfidf-logreg (TP2, models/sentiment.joblib)'}
+→ en haut de la page : « API prête : tfidf-logreg (TP2, models/sentiment.joblib) »
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> La santé de l'API est revérifiée à chaque réexécution du script Streamlit : l'arrêt de l'API se voit dès le rechargement de la page. Capture de la page à ajouter.
 
 ![T29 : la page ouverte](captures/tp5-t29-page.png)
 
@@ -963,14 +1016,15 @@ Analysez « Livraison rapide, produit conforme, très satisfait », puis « Prod
 **Obtenu** :
 
 ```text
-À compléter
+« Livraison rapide, produit conforme, très satisfait » → Avis positif, 78 % (0.777)
+« Produit cassé et service injoignable, à fuir » → Avis négatif, 75 %
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (d'où viennent ces pourcentages ?) :
 
-> À compléter.
+> Mêmes scores que l'API appelée directement (T16, T17) : la page n'ajoute aucune logique, elle traduit.
 
 ![T30 : avis positif](captures/tp5-t30-positif.png)
 
@@ -985,14 +1039,15 @@ Analysez « xqzvb wlkptr grombu ».
 **Obtenu** :
 
 ```text
-À compléter
+« xqzvb wlkptr grombu » → « Je ne sais pas : à faire vérifier par un humain », 52 % (0.5162)
++ encadré « La confiance est sous le seuil d'abstention : un humain doit trancher. »
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi cet affichage vaut-il mieux qu'un verdict forcé ?) :
 
-> À compléter.
+> L'abstention du TP4 traverse toute la chaîne : modèle → API → client → page, avec un message en français au bout.
 
 ![T31 : je ne sais pas](captures/tp5-t31-abstention.png)
 
@@ -1005,14 +1060,16 @@ Analysez trois espaces. Arrêtez ensuite l'API (`Ctrl+C` dans son terminal), rec
 **Obtenu** :
 
 ```text
-À compléter
+Trois espaces → avertissement « Texte refusé : vide, fait d'espaces, ou de plus de 2000
+caractères » (422). API arrêtée + rechargement → bandeau « API injoignable : lancez
+d'abord uvicorn api.main:app ». Vérifié par tests/test_client.py et test_interface.py.
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (quelle réponse de l'API se cache derrière chaque message ?) :
 
-> À compléter.
+> Chaque code HTTP a son message : 422 → avertissement, 503 → « Modèle non chargé », connexion impossible → « API injoignable ». La page n'affiche jamais une trace technique.
 
 ![T32 : texte refusé](captures/tp5-t32-refus.png)
 
@@ -1027,14 +1084,16 @@ Onglet « Un fichier d'avis », fichier `data/avis_exemple.csv`, puis « Téléc
 **Obtenu** :
 
 ```text
-À compléter
+data/avis_exemple.csv : tableau de 6 avis avec verdict et confiance
+Résumé : {'INDETERMINE': 1, 'NEGATIVE': 2, 'POSITIVE': 3}
+Bouton « Télécharger les résultats » → resultats.csv
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (combien d'avis partent vers un humain, et lesquels ?) :
 
-> À compléter.
+> Un avis sur six part vers un humain (« xqzvb wlkptr grombu », 0,52). Le lot passe par la même fonction client que l'avis unique : mêmes verdicts, mêmes messages.
 
 ![T33 : le lot d'avis](captures/tp5-t33-lot.png)
 
@@ -1051,14 +1110,16 @@ git push
 **Obtenu** :
 
 ```text
-À compléter
+Commit « Semaine 5 : interface Streamlit » (5fa565b) poussé le 28/10.
+CI du 28/10 : failure — pytest 9 en CI (monkeypatch ne restaure plus app.state).
+Verte depuis le 04/11, après l'épinglage pytest==8.3.* du complément lot 1.
 ```
 
 - [ ] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> Rouge en CI, vert en local : la CI installait pytest sans épinglage et a reçu pytest 9, dont monkeypatch laisse l'API sans modèle pour le test suivant. Diagnostic confirmé par le LISEZ-MOI du lot 1, correction : « pytest==8.3.* » sur la ligne d'installation de ci.yml.
 
 ![T34 : la CI du TP5](captures/tp5-t34-actions.png)
 
@@ -1075,14 +1136,16 @@ streamlit run ui/app.py
 **Obtenu** :
 
 ```text
-À compléter
+Répartition des verdicts : positif 3, négatif 2, à vérifier 1, refus ou erreur 0
+Confiance par tranche : 50-60 % : 1 ; 60-70 % : 1 ; 70-80 % : 3 ; 80-90 % : 1 ; 90-100 % : 0
+python -m pytest tests/test_graphiques.py tests/test_interface.py -q : 9 passed
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (que montre le graphique des confiances que le tableau ne montre pas ?) :
 
-> À compléter.
+> Les calculs vivent dans ui/graphiques.py, deux fonctions pures testées sans Streamlit ; la page ne fait qu'afficher. L'histogramme montre ce que le tableau cache : un avis tranché de justesse (50-60 %).
 
 ![T34a : les deux graphiques](captures/tp5-t34a-graphiques.png)
 
@@ -1124,14 +1187,16 @@ python -m pytest -q
 **Obtenu** :
 
 ```text
-À compléter
+python -m pytest -q : 2 failed, 98 passed, 3 xfailed
+— test_le_modele_se_place_ou_l_on_veut (sentiment_app.predict n'existe pas encore)
+— test_l_api_ne_bricole_plus_le_chemin_de_python (api/model.py modifie sys.path)
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (que réclame chacun des deux échecs ?) :
 
-> À compléter.
+> Deux échecs voulus : ils désignent exactement les étapes B et C du TP.
 
 ![T35](captures/tp6-t35-pytest.png)
 
@@ -1149,14 +1214,17 @@ python src/predict.py "Livraison rapide, produit conforme, très satisfait"
 **Obtenu** :
 
 ```text
-À compléter
+git mv src/predict.py sentiment_app/predict.py ; alias de compatibilité posé dans src/
+chemin_modele() : SENTIMENT_MODELE, sinon models/sentiment.joblib sous la racine
+python -m pytest -q : 1 failed (le test du sys.path, étape suivante)
+python src/predict.py "Livraison rapide, …" : positive (confiance 78%)
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (à quoi sert le fichier de compatibilité ?) :
 
-> À compléter.
+> git mv garde l'historique du fichier. L'alias src/predict.py se remplace à l'import par le vrai module : les commandes et les tests du TP2 restent valides.
 
 ![T36](captures/tp6-t36-deplacement.png)
 
@@ -1174,14 +1242,16 @@ mypy api
 **Obtenu** :
 
 ```text
-À compléter
+python -m pytest -q : 100 passed, 3 xfailed (aucun failed)
+Select-String -Path api\*.py -Pattern "sys.path" : (rien)
+ruff check . : All checks passed! ; mypy api : Success
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (qu'est-ce qui a changé dans api/model.py ?) :
 
-> À compléter.
+> api/model.py importe sentiment_app.predict comme n'importe quelle bibliothèque : plus de bricolage du chemin de Python à l'exécution.
 
 ![T37](captures/tp6-t37-api.png)
 
@@ -1200,14 +1270,17 @@ sentiment serve
 **Obtenu** :
 
 ```text
-À compléter
+sentiment --version : sentiment-app 0.6.0
+sentiment predict "Livraison rapide, …" : {"label": "POSITIVE", "score": 0.777, …}
+sentiment predict "xqzvb wlkptr grombu" : {"label": "INDETERMINE", "score": 0.5162, …}
+sentiment serve : non rejoué (port 8000 occupé par l'API déjà lancée — même uvicorn api.main:app)
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi « predict » applique-t-il aussi le seuil d'abstention ?) :
 
-> À compléter.
+> La commande passe par api/model.py, comme l'API : le seuil d'abstention s'applique aussi en ligne de commande. Install en mode développement : pip install -e . (fait avec --no-deps, voir Difficultés).
 
 ![T38](captures/tp6-t38-commande.png)
 
@@ -1223,14 +1296,15 @@ python -m build --wheel
 **Obtenu** :
 
 ```text
-À compléter
+Successfully built sentiment_app-0.6.0-py3-none-any.whl
+Contenu : ['api', 'sentiment_app', 'sentiment_app-0.6.0.dist-info', 'ui']
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (pourquoi ni tests, ni données, ni modèle ?) :
 
-> À compléter.
+> Ni tests, ni data, ni models, ni src dans la roue : on ne distribue que le code. Le modèle reste un artefact de déploiement.
 
 ![T39](captures/tp6-t39-roue.png)
 
@@ -1250,14 +1324,18 @@ roue-tp6\Scripts\sentiment predict "Livraison rapide, produit conforme, très sa
 **Obtenu** :
 
 ```text
-À compléter
+Environnement neuf (py -3.12, %TEMP%\roue-tp6) ; pip installe la roue et ses dépendances.
+Sans SENTIMENT_MODELE : « modèle introuvable : …\roue-tp6\Lib\site-packages\models\
+sentiment.joblib. Lancez python src/train.py, ou indiquez son chemin dans la variable
+SENTIMENT_MODELE » — code de sortie 1.
+Avec : {"label": "POSITIVE", "score": 0.777, …}
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (qu'a-t-il fallu fournir à la roue, et qu'a-t-elle installé seule ?) :
 
-> À compléter.
+> Le paquet fonctionne hors du dépôt avec deux seules choses : pip et le chemin d'un modèle. Le message d'erreur dit quoi faire, et le code de sortie 1 permet à un script de détecter l'échec.
 
 ![T40](captures/tp6-t40-ailleurs.png)
 
@@ -1276,14 +1354,16 @@ git push origin v0.6.0
 **Obtenu** :
 
 ```text
-À compléter
+Commit « Semaine 6 : paquet installable, version 0.6.0 » (8523622), étiquette v0.6.0 poussée.
+CI du 28/10 : failure (pytest 9, voir T34) → verte le 04/11 avec l'épinglage du lot 1,
+y compris l'étape « roue installée hors du dépôt ».
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** :
 
-> À compléter.
+> L'étiquette v0.6.0 est visible sur GitHub. La CI reconstruit la roue, l'installe dans un environnement neuf et vérifie une prédiction : le T40 est rejoué à chaque push.
 
 ![T41](captures/tp6-t41-actions.png)
 
@@ -1301,14 +1381,16 @@ python -m pytest tests/test_fiche_modele.py -q
 **Obtenu** :
 
 ```text
-À compléter
+Au départ : 13 failed, 1 passed (fiche vide) — voulu.
+Fiche remplie avec les mesures du dépôt (F1 0.879, rappel négatifs 0.931, seuil 0.60,
+jeu d'or 6/11/3, biais 0.588 contre 1.000, termes SHAP) : 14 passed.
 ```
 
-- [ ] Conforme
+- [x] Conforme
 
 **Commentaire** (quelle rubrique a été la plus difficile à remplir, et pourquoi ?) :
 
-> À compléter.
+> La fiche est testée comme les fiches de cadrage du TP1 : chiffres du dépôt exigés, version du paquet exacte, et un humain prévu dans les conditions d'usage. Réentraîner sans la mettre à jour fera échouer le test : c'est le but, la fiche suit le modèle.
 
 ![T41a : fiche modèle](captures/tp6-t41a-fiche-modele.png)
 
@@ -1341,46 +1423,48 @@ Une ligne par blocage : le message exact, ce qui le provoquait, ce qui l'a régl
 
 | TP | Commande | Message | Cause | Solution |
 | --- | --- | --- | --- | --- |
-| | | | | |
-| | | | | |
-| | | | | |
+| TP1 | `py -3.11 -m venv .venv` | `py -3.11` introuvable | Python 3.11 non installé | venv en 3.12.10, compatible avec les épinglages ; avertissement toléré |
+| TP4 | `git commit` | `Executable mypy not found` (hook pre-commit) | venv non activé au moment du commit | activer `.venv` avant chaque commit |
+| TP4 | `pytest tests/test_limites.py` | `detail` = `'texte vide'` (chaîne) | `ValueError` de `predict()` convertie en 422 avec son message | `field_validator` dans le schéma ; toute panne du modèle → 500 |
+| TP6 | `pip install -e .` | `OSError [WinError 32] … uvicorn.exe` | API encore lancée (exe verrouillé) + conflit d'épinglage uvicorn (paquet <0.31, requirements 0.32) | requirements aligné sur `0.30.*` ; install `--no-deps` ; refaire `pip install -e .` une fois l'API fermée |
+| TP5-TP6 | `git push` (CI) | 1 failed en CI, tout vert en local | CI sans épinglage : pytest 9, `monkeypatch` ne restaure plus `app.state` | `pytest==8.3.*` épinglé en CI (complément lot 1) |
 
 ## La répartition du travail
 
 | TP | Ce qu'a fait le membre A | Ce qu'a fait le membre B |
 | --- | --- | --- |
-| TP1 | | |
-| TP2 | | |
-| TP3 | | |
-| TP4 | | |
-| TP5 | | |
-| TP6 | | |
+| TP1 | Kit, environnement, dépôt GitHub privé, premier push, fiches de cadrage | Invitation acceptée ; ligne du tableau du binôme *(à compléter)* |
+| TP2 | Jeu de démonstration, entraînement, évaluation, metrics.json, push | Analyse des erreurs : docs/semaine2.md (commit 1c87374 du 14/10) |
+| TP3 | Kit, API FastAPI, essais T15 à T20, docs/semaine3.md, push | *À compléter : réentraîner sur son poste, rejouer les essais* |
+| TP4 | Point de départ mesuré, contrat d'entrée, abstention, jeu d'or, intégration, ruff/mypy/pre-commit, CI | *À compléter : ses 10 avis du jeu d'or, pre-commit install sur son clone* |
+| TP5 | Kit, essais T29 à T33, docs/semaine5.md, push | *À compléter : T32 et T33 sur son poste* |
+| TP6 | Paquet, roue, T35 à T41, étiquette v0.6.0, compléments du lot 1 | *À compléter : installer la roue sur son poste* |
 
 ## Le bilan
 
 **TP1** :
 
-> À compléter.
+> Un dépôt qui tient debout ailleurs que sur nos postes : structure, versions figées, .gitignore avant le premier commit. La leçon durable est l'arbre de choix — trois cas, trois approches différentes, et aucune n'était « un gros modèle ».
 
 **TP2** :
 
-> À compléter.
+> Un modèle simple et mesuré vaut mieux qu'un modèle impressionnant et invérifiable : F1 0,879, 7 erreurs toutes expliquées (le retournement des avis mitigés). Seule la mesure est versionnée, le modèle se reconstruit.
 
 **TP3** :
 
-> À compléter.
+> L'API ne fait que servir : elle appelle predict(), refuse de démarrer sans modèle, et répond 422 avant même que le modèle soit consulté. La page /docs a suffi pour tous les essais.
 
 **TP4** :
 
-> À compléter.
+> Le TP qui a le plus appris : les outils statiques n'avaient vu aucun des quatre défauts de comportement, et chaque défaut a été trouvé par un test qui exerce une frontière ou une panne. L'abstention (seuil 0,60) divise les erreurs par trois au prix de 28 % d'avis déroutés — et le biais mesuré montre qu'elle déplace le problème vers les avis à retournement.
 
 **TP5** :
 
-> À compléter.
+> Trois fichiers, trois rôles : la page affiche, le client traduit, l'API décide. Chaque panne a un message en français, et les douze tests passent sans lancer ni l'API ni la page.
 
 **TP6** :
 
-> À compléter.
+> Une roue de 0.6.0 qui s'installe hors du dépôt avec pip et une variable d'environnement : c'est la définition d'un livrable. La fiche modèle ferme la boucle : elle dit quand ne pas se servir du modèle, et ses chiffres sont testés contre le dépôt.
 
 ---
 
