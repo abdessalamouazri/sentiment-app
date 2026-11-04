@@ -10,9 +10,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # pour importer ui
 import pandas as pd
 import streamlit as st
 
+from sentiment_app import __version__
 from ui import client, graphiques
 
-st.set_page_config(page_title="Analyse de sentiment")
+st.set_page_config(page_title="Analyse de sentiment", page_icon="📊", layout="wide")
 st.title("Analyse de sentiment des avis")
 
 session = client.creer_session()
@@ -21,6 +22,21 @@ if etat.ok:
     st.caption(f"API prête : {etat.message}")
 else:
     st.error(etat.message)
+
+with st.sidebar:
+    st.markdown("## 📊 sentiment-app")
+    st.caption(f"version {__version__}")
+    st.divider()
+    st.markdown("**Abdellah Wizli**")
+    st.caption("@wizli595 · membre A")
+    st.markdown("**Mouad Berrami**")
+    st.caption("membre B")
+    st.divider()
+    if etat.ok:
+        st.success("API en ligne", icon="✅")
+    else:
+        st.error("API injoignable", icon="⛔")
+    st.caption("Seuil d'abstention : 0,60 — sous ce seuil, un humain tranche.")
 
 onglet_avis, onglet_lot = st.tabs(["Un avis", "Un fichier d'avis"])
 

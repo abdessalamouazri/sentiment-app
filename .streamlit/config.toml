@@ -1,0 +1,8 @@
+# Thème de l'interface (TP5) : violet profond sur fond clair.
+[theme]
+base = "light"
+primaryColor = "#6C4EE3"
+backgroundColor = "#FBFAFF"
+secondaryBackgroundColor = "#EFECFB"
+textColor = "#1F2335"
+font = "sans serif"
